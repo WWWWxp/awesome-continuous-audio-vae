@@ -17,17 +17,6 @@
 
 Papers, official implementations, pretrained weights, latent frame rates, dimensions, encoder/decoder architectures, and model I/O in one place.
 
-## How to read the tables
-
-- **Year–Month**: first public month (`YYYY-MM`); arXiv v1 for paper-backed entries, otherwise the official code or checkpoint release.
-- **Sample rate**: native encoder rate used by the released model or its mel frontend.
-- **Frame rate**: latent time steps produced per second of input audio.
-- **Dim**: final latent width at each time step; 2-D mel latents are flattened across channel and frequency.
-- **Feature**: acoustic representation encoded by the VAE, such as waveform, mel spectrogram, or complex STFT.
-- **Architecture**: coarse encoder/decoder backbone family.
-- **Weights**: pretrained checkpoint link; absent links are omitted.
-- **N/R**: not reported in the linked paper, code, or checkpoint configuration.
-
 <a id="audio"></a>
 ## 🔊 Audio / Sound
 
