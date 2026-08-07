@@ -34,7 +34,7 @@ General audio, environmental sound, Foley, and multi-domain reconstruction. **25
 
 | Model | Year | Sample rate | Frame rate | Dim | Input | Architecture | Encoder / Decoder | Output | Paper | Code | Weights |
 | --- | ---: | ---: | ---: | ---: | --- | --- | --- | --- | --- | --- | --- |
-| **AudioCALM Audio VAE** | 2026 | `44.1 kHz` | `≈10.75 Hz` | `N/R` | stereo waveform | `CNN + Transformer` | Strided residual Conv1D + self-attention + patch-[CLS] aggregator / residual Conv1D + self-attention + iSTFT head | 44.1 kHz stereo waveform (iSTFT) | [paper](https://arxiv.org/abs/2606.23080) | — | ⚪ — |
+| **AudioCALM Audio VAE** | 2026 | `44.1 kHz` | `≈10.75 Hz` | `64` | stereo waveform | `CNN + Transformer` | Strided residual Conv1D + self-attention + patch-[CLS] aggregator / residual Conv1D + self-attention + iSTFT head | 44.1 kHz stereo waveform (iSTFT) | [paper](https://arxiv.org/abs/2606.23080) | — | ⚪ — |
 | **GenAE** | 2026 | `44.1 kHz` | `13.125 Hz` | `N/R` | multichannel waveform | `CNN + Transformer` | Early-downsampling separable Conv1D + windowed self-attention / ConvTranspose1D + windowed self-attention | multichannel waveform | [paper](https://arxiv.org/abs/2602.15749) | — | ⚪ — |
 | **KVAE-Audio** | 2026 | `48 kHz` | `50 Hz` | `64` | waveform | `CNN` | 1-D CNN / 1-D CNN | waveform | — | [code](https://github.com/kandinskylab/kvae-audio) | 🟢 [weights](https://huggingface.co/kandinskylab/KVAE-Audio) |
 | **LTX-2 Audio VAE** | 2026 | `16 kHz` | `25 Hz` | `128` | mel spectrogram | `CNN` | 2-D CNN / 2-D CNN | decoded mel → stereo vocoder → 24 kHz stereo waveform | — | [code](https://github.com/Lightricks/LTX-2) | 🟢 [weights](https://huggingface.co/Lightricks/LTX-2) |
