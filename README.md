@@ -6,8 +6,8 @@
 <p><strong>A curated catalog of continuous audio VAEs and autoencoders for audio, music, singing, and speech.</strong></p>
 
 <p>
-<img src="https://img.shields.io/badge/models-55-4c78a8?style=flat-square" alt="55 models">
-<img src="https://img.shields.io/badge/with_weights-37-2ca02c?style=flat-square" alt="37 with weights">
+<img src="https://img.shields.io/badge/models-56-4c78a8?style=flat-square" alt="56 models">
+<img src="https://img.shields.io/badge/with_weights-38-2ca02c?style=flat-square" alt="38 with weights">
 <img src="https://img.shields.io/badge/updated-2026--08--07-6f42c1?style=flat-square" alt="Updated 2026-08-07">
 </p>
 
@@ -31,13 +31,14 @@ Papers, official implementations, pretrained weights, latent frame rates, dimens
 <a id="audio"></a>
 ## 🔊 Audio / Sound
 
-General audio, environmental sound, Foley, and multi-domain reconstruction. **25 models · 16 with weights.**
+General audio, environmental sound, Foley, and multi-domain reconstruction. **26 models · 17 with weights.**
 
 | Model and resources | Year–Month | Sample rate | Frame rate | Dim | Feature | Architecture |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
 | **OmniVAE audio-only** · [Paper](https://arxiv.org/abs/2607.23855) · [Code](https://github.com/OpenMOSS/OmniVAE) · 🟢 [Weights](https://huggingface.co/OpenMOSS-Team/OmniVAE) | 2026-07 | 48 kHz | 50 Hz | 128 | waveform | CNN |
 | **Qwen-Audio-3 Shared VAE** · [Paper](https://arxiv.org/abs/2607.27011) | 2026-07 | 48 kHz | 25 Hz | 128 | stereo waveform | CNN |
 | **Qwen-Audio-VAE** · [Paper](https://arxiv.org/abs/2607.11738) | 2026-07 | 24 kHz | 12.5 Hz | 128 | waveform | CNN + Transformer |
+| **STFT-VAE** · [Code](https://github.com/fluxions-ai/stftvae) · 🟢 [Weights](https://huggingface.co/fluxions/stftvae) | 2026-07 | 24 kHz | 3.125 Hz | 128 | complex STFT | Transformer |
 | **AudioCALM Audio VAE** · [Paper](https://arxiv.org/abs/2606.23080) | 2026-06 | 44.1 kHz | ≈10.75 Hz | 64 | stereo waveform | CNN + Transformer |
 | **KVAE-Audio** · [Code](https://github.com/kandinskylab/kvae-audio) · 🟢 [Weights](https://huggingface.co/kandinskylab/KVAE-Audio) | 2026-06 | 48 kHz | 50 Hz | 64 | waveform | CNN |
 | **STAR-VAE** · [Paper](https://arxiv.org/abs/2606.23064) | 2026-06 | N/R | N/R | N/R | waveform | N/R |
