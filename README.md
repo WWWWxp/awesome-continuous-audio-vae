@@ -24,7 +24,7 @@ Papers, official implementations, pretrained weights, latent frame rates, dimens
 - **Frame rate**: latent time steps produced per second of input audio.
 - **Dim**: final latent width at each time step; 2-D mel latents are flattened across channel and frequency.
 - **Input / Output**: the encoder input representation and the decoded output path.
-- **Architecture**: coarse backbone family; **Encoder / Decoder** gives the concrete implementation.
+- **Architecture**: coarse encoder/decoder backbone family.
 - **Weights**: 🟢 standalone component · 🟡 bundled in a larger checkpoint · ⚪ unavailable.
 - **N/R**: not reported in the linked paper, code, or checkpoint configuration.
 
@@ -65,33 +65,33 @@ General audio, environmental sound, Foley, and multi-domain reconstruction. **25
 
 **Architecture and resources**
 
-| Model | Architecture | Encoder / Decoder | Paper | Code | Weights |
-| --- | --- | --- | --- | --- | --- |
-| **OmniVAE audio-only** | CNN | DAC-style Conv1D / DAC-style Conv1D | [paper](https://arxiv.org/abs/2607.23855) | [code](https://github.com/OpenMOSS/OmniVAE) | 🟢 [weights](https://huggingface.co/OpenMOSS-Team/OmniVAE) |
-| **Qwen-Audio-3 Shared VAE** | CNN | Stable Audio Open-style Conv1D encoder / Conv1D waveform decoder | [paper](https://arxiv.org/abs/2607.27011) | — | ⚪ — |
-| **Qwen-Audio-VAE** | CNN + Transformer | DAC-style causal Conv1D + window-Transformer bottleneck / asymmetric causal ConvTranspose1D decoder | [paper](https://arxiv.org/abs/2607.11738) | — | ⚪ — |
-| **AudioCALM Audio VAE** | CNN + Transformer | Strided residual Conv1D + self-attention + patch-[CLS] aggregator / residual Conv1D + self-attention + iSTFT head | [paper](https://arxiv.org/abs/2606.23080) | — | ⚪ — |
-| **KVAE-Audio** | CNN | 1-D CNN / 1-D CNN | — | [code](https://github.com/kandinskylab/kvae-audio) | 🟢 [weights](https://huggingface.co/kandinskylab/KVAE-Audio) |
-| **STAR-VAE** | N/R | N/R | [paper](https://arxiv.org/abs/2606.23064) | — | ⚪ — |
-| **UniSonate Mel-VAE** | CNN | Causal ConvNeXt / mirrored ConvNeXt | [paper](https://arxiv.org/abs/2604.22209) | — | ⚪ — |
-| **GenAE** | CNN + Transformer | Early-downsampling separable Conv1D + windowed self-attention / ConvTranspose1D + windowed self-attention | [paper](https://arxiv.org/abs/2602.15749) | — | ⚪ — |
-| **Ming-omni-tts continuous tokenizer** | Transformer | Qwen2 Transformer encoder / Transformer + iSTFT decoder | — | [code](https://github.com/inclusionAI/Ming-omni-tts) | 🟢 [weights](https://huggingface.co/inclusionAI/Ming-omni-tts-tokenizer-12Hz) |
-| **LTX-2 Audio VAE** | CNN | 2-D CNN / 2-D CNN | — | [code](https://github.com/Lightricks/LTX-2) | 🟢 [weights](https://huggingface.co/Lightricks/LTX-2) |
-| **Omni2Sound OOB/Wav VAE** | CNN | Stable Audio-style strided Conv1D + Snake / mirrored Conv1D + Snake | [paper](https://arxiv.org/abs/2601.02731) | [code](https://github.com/omni2sound/Omni2Sound) | 🟢 [weights](https://huggingface.co/Dalision/Omni2Sound) |
-| **HunyuanVideo-Foley Audio VAE** | CNN | Enhanced DAC Conv1D / enhanced DAC Conv1D | [paper](https://arxiv.org/abs/2508.16930) | [code](https://github.com/Tencent-Hunyuan/HunyuanVideo-Foley) | 🟢 [weights](https://huggingface.co/tencent/HunyuanVideo-Foley) |
-| **Kling-Foley Mel-VAE** | CNN | 32-layer Conv1D mel encoder / mirrored ConvTranspose1D mel decoder | [paper](https://arxiv.org/abs/2506.19774) | — | ⚪ — |
-| **MMAudio VAE 16 kHz** | CNN | 1-D temporal CNN / 1-D temporal CNN | [paper](https://arxiv.org/abs/2412.15322) | [code](https://github.com/hkchengrex/MMAudio) | 🟢 [weights](https://huggingface.co/hkchengrex/MMAudio) |
-| **MMAudio VAE 44.1 kHz** | CNN | 1-D temporal CNN / 1-D temporal CNN | [paper](https://arxiv.org/abs/2412.15322) | [code](https://github.com/hkchengrex/MMAudio) | 🟢 [weights](https://huggingface.co/hkchengrex/MMAudio) |
-| **MultiFoley DAC-VAE** | CNN | DAC-style Conv1D / DAC-style Conv1D | [paper](https://arxiv.org/abs/2411.17698) | — | ⚪ — |
-| **DACVAE / Movie Gen Audio Autoencoder** | CNN | DAC-style Conv1D / DAC-style Conv1D | [paper](https://arxiv.org/abs/2410.13720) | [code](https://github.com/facebookresearch/dacvae) | 🟢 [weights](https://huggingface.co/facebook/dacvae-watermarked) |
-| **EzAudio 1-D VAE** | CNN | Stable Audio-style Oobleck Conv1D encoder / mirrored Oobleck Conv1D decoder | [paper](https://arxiv.org/abs/2409.10819) | [code](https://github.com/haidog-yaqub/EzAudio) | 🟡 [weights](https://github.com/haidog-yaqub/EzAudio) |
-| **StableAudio1.0 / Stable Audio Open VAE** | CNN | Oobleck Conv1D / Oobleck Conv1D | [paper](https://arxiv.org/abs/2407.14358) | [code](https://github.com/Stability-AI/stable-audio-tools) | 🟡 [weights](https://huggingface.co/stabilityai/stable-audio-open-1.0) |
-| **Wave-VAE (Stability AI)** | N/R | N/R | — | [code](https://github.com/Stability-AI/stable-audio-tools) | ⚪ — |
-| **Auffusion VAE** | CNN | 2-D CNN / 2-D CNN | [paper](https://arxiv.org/abs/2401.01044) | [code](https://github.com/happylittlecat2333/Auffusion) | 🟡 [weights](https://huggingface.co/auffusion/auffusion) |
-| **AudioLDM 2 VAE** | CNN | 2-D CNN / 2-D CNN | [paper](https://arxiv.org/abs/2308.05734) | [code](https://github.com/haoheliu/AudioLDM2) | 🟢 [weights](https://huggingface.co/cvssp/audioldm2/tree/main/vae) |
-| **Make-An-Audio 2 Audio VAE** | CNN + Transformer | Conv1D + temporal Transformer mel encoder / Conv1D + temporal Transformer mel decoder | [paper](https://arxiv.org/abs/2305.18474) | [code](https://github.com/bytedance/Make-An-Audio-2) | 🟡 [weights](https://huggingface.co/ByteDance/Make-An-Audio-2) |
-| **AudioLDM VAE** | CNN | 2-D CNN / 2-D CNN | [paper](https://arxiv.org/abs/2301.12503) | [code](https://github.com/haoheliu/AudioLDM) | 🟡 [weights](https://huggingface.co/cvssp/audioldm-s-full-v2) |
-| **Make-An-Audio VAE** | CNN | 2-D CNN / 2-D CNN | [paper](https://arxiv.org/abs/2301.12661) | [code](https://github.com/Text-to-Audio/Make-An-Audio) | 🟡 [weights](https://github.com/Text-to-Audio/Make-An-Audio) |
+| Model and resources | Architecture |
+| --- | --- |
+| **OmniVAE audio-only** · [Paper](https://arxiv.org/abs/2607.23855) · [Code](https://github.com/OpenMOSS/OmniVAE) · 🟢 [Weights](https://huggingface.co/OpenMOSS-Team/OmniVAE) | CNN |
+| **Qwen-Audio-3 Shared VAE** · [Paper](https://arxiv.org/abs/2607.27011) · Code — · ⚪ Weights — | CNN |
+| **Qwen-Audio-VAE** · [Paper](https://arxiv.org/abs/2607.11738) · Code — · ⚪ Weights — | CNN + Transformer |
+| **AudioCALM Audio VAE** · [Paper](https://arxiv.org/abs/2606.23080) · Code — · ⚪ Weights — | CNN + Transformer |
+| **KVAE-Audio** · Paper — · [Code](https://github.com/kandinskylab/kvae-audio) · 🟢 [Weights](https://huggingface.co/kandinskylab/KVAE-Audio) | CNN |
+| **STAR-VAE** · [Paper](https://arxiv.org/abs/2606.23064) · Code — · ⚪ Weights — | N/R |
+| **UniSonate Mel-VAE** · [Paper](https://arxiv.org/abs/2604.22209) · Code — · ⚪ Weights — | CNN |
+| **GenAE** · [Paper](https://arxiv.org/abs/2602.15749) · Code — · ⚪ Weights — | CNN + Transformer |
+| **Ming-omni-tts continuous tokenizer** · Paper — · [Code](https://github.com/inclusionAI/Ming-omni-tts) · 🟢 [Weights](https://huggingface.co/inclusionAI/Ming-omni-tts-tokenizer-12Hz) | Transformer |
+| **LTX-2 Audio VAE** · Paper — · [Code](https://github.com/Lightricks/LTX-2) · 🟢 [Weights](https://huggingface.co/Lightricks/LTX-2) | CNN |
+| **Omni2Sound OOB/Wav VAE** · [Paper](https://arxiv.org/abs/2601.02731) · [Code](https://github.com/omni2sound/Omni2Sound) · 🟢 [Weights](https://huggingface.co/Dalision/Omni2Sound) | CNN |
+| **HunyuanVideo-Foley Audio VAE** · [Paper](https://arxiv.org/abs/2508.16930) · [Code](https://github.com/Tencent-Hunyuan/HunyuanVideo-Foley) · 🟢 [Weights](https://huggingface.co/tencent/HunyuanVideo-Foley) | CNN |
+| **Kling-Foley Mel-VAE** · [Paper](https://arxiv.org/abs/2506.19774) · Code — · ⚪ Weights — | CNN |
+| **MMAudio VAE 16 kHz** · [Paper](https://arxiv.org/abs/2412.15322) · [Code](https://github.com/hkchengrex/MMAudio) · 🟢 [Weights](https://huggingface.co/hkchengrex/MMAudio) | CNN |
+| **MMAudio VAE 44.1 kHz** · [Paper](https://arxiv.org/abs/2412.15322) · [Code](https://github.com/hkchengrex/MMAudio) · 🟢 [Weights](https://huggingface.co/hkchengrex/MMAudio) | CNN |
+| **MultiFoley DAC-VAE** · [Paper](https://arxiv.org/abs/2411.17698) · Code — · ⚪ Weights — | CNN |
+| **DACVAE / Movie Gen Audio Autoencoder** · [Paper](https://arxiv.org/abs/2410.13720) · [Code](https://github.com/facebookresearch/dacvae) · 🟢 [Weights](https://huggingface.co/facebook/dacvae-watermarked) | CNN |
+| **EzAudio 1-D VAE** · [Paper](https://arxiv.org/abs/2409.10819) · [Code](https://github.com/haidog-yaqub/EzAudio) · 🟡 [Weights](https://github.com/haidog-yaqub/EzAudio) | CNN |
+| **StableAudio1.0 / Stable Audio Open VAE** · [Paper](https://arxiv.org/abs/2407.14358) · [Code](https://github.com/Stability-AI/stable-audio-tools) · 🟡 [Weights](https://huggingface.co/stabilityai/stable-audio-open-1.0) | CNN |
+| **Wave-VAE (Stability AI)** · Paper — · [Code](https://github.com/Stability-AI/stable-audio-tools) · ⚪ Weights — | N/R |
+| **Auffusion VAE** · [Paper](https://arxiv.org/abs/2401.01044) · [Code](https://github.com/happylittlecat2333/Auffusion) · 🟡 [Weights](https://huggingface.co/auffusion/auffusion) | CNN |
+| **AudioLDM 2 VAE** · [Paper](https://arxiv.org/abs/2308.05734) · [Code](https://github.com/haoheliu/AudioLDM2) · 🟢 [Weights](https://huggingface.co/cvssp/audioldm2/tree/main/vae) | CNN |
+| **Make-An-Audio 2 Audio VAE** · [Paper](https://arxiv.org/abs/2305.18474) · [Code](https://github.com/bytedance/Make-An-Audio-2) · 🟡 [Weights](https://huggingface.co/ByteDance/Make-An-Audio-2) | CNN + Transformer |
+| **AudioLDM VAE** · [Paper](https://arxiv.org/abs/2301.12503) · [Code](https://github.com/haoheliu/AudioLDM) · 🟡 [Weights](https://huggingface.co/cvssp/audioldm-s-full-v2) | CNN |
+| **Make-An-Audio VAE** · [Paper](https://arxiv.org/abs/2301.12661) · [Code](https://github.com/Text-to-Audio/Make-An-Audio) · 🟡 [Weights](https://github.com/Text-to-Audio/Make-An-Audio) | CNN |
 
 <p align="right"><a href="#top">↑ Back to top</a></p>
 
@@ -120,21 +120,21 @@ Autoencoders designed for music generation and representation. **13 models · 10
 
 **Architecture and resources**
 
-| Model | Architecture | Encoder / Decoder | Paper | Code | Weights |
-| --- | --- | --- | --- | --- | --- |
-| **SAME-L** | Transformer | Waveform patching + sliding-window Transformer resampler / Transformer resampler + inverse patching | [paper](https://arxiv.org/abs/2605.18613) | [code](https://github.com/Stability-AI/stable-audio-3) | 🟢 [weights](https://huggingface.co/stabilityai/SAME-L) |
-| **SAME-S** | Transformer | Waveform patching + chunked Transformer resampler / chunked Transformer resampler + inverse patching | [paper](https://arxiv.org/abs/2605.18613) | [code](https://github.com/Stability-AI/stable-audio-3) | 🟢 [weights](https://huggingface.co/stabilityai/SAME-S) |
-| **ACE-Step 1.5 VAE** | CNN | Oobleck-style Conv1D / mirrored Conv1D | [paper](https://arxiv.org/abs/2602.00744) | [code](https://github.com/ace-step/ACE-Step-1.5) | 🟡 [weights](https://huggingface.co/ACE-Step/Ace-Step1.5) |
-| **DiffRhythm 2 Music VAE** | CNN + Transformer | Stable Audio 2-style Conv1D encoder / Transformer bottleneck + BigVGAN decoder | [paper](https://arxiv.org/abs/2510.22950) | [code](https://github.com/ASLP-lab/DiffRhythm) | ⚪ — |
-| **CoDiCodec continuous branch** | CNN + Transformer | Convolutional STFT patchifier + Transformer summary encoder / Transformer-conditioned consistency U-Net decoder | [paper](https://arxiv.org/abs/2509.09836) | [code](https://github.com/SonyCSLParis/codicodec) | 🟢 [weights](https://pypi.org/project/codicodec/) |
-| **epsilonar-VAE** | CNN + Transformer | Strided Conv1D + RoPE Transformer bottleneck / ConvTranspose1D + RoPE Transformer | [paper](https://arxiv.org/abs/2509.14912) | [code](https://huggingface.co/earlab/EAR_VAE) | ⚪ — |
-| **ACE-Step DCAE** | CNN | 2-D DCAE encoder / 2-D DCAE decoder | [paper](https://arxiv.org/abs/2506.00045) | [code](https://github.com/ace-step/ACE-Step) | 🟡 [weights](https://huggingface.co/ACE-Step/ACE-Step-v1-3.5B) |
-| **DiffRhythm VAE** | CNN | Oobleck Conv1D / Oobleck Conv1D | [paper](https://arxiv.org/abs/2503.01183) | [code](https://github.com/ASLP-lab/DiffRhythm) | 🟢 [weights](https://huggingface.co/ASLP-lab/DiffRhythm-vae) |
-| **Music2Latent** | CNN + Transformer | Residual Conv2D/Conv1D + frequency self-attention encoder / mirrored upsampler + NCSN++ consistency U-Net | [paper](https://arxiv.org/abs/2408.06500) | [code](https://github.com/SonyCSLParis/music2latent) | 🟢 [weights](https://huggingface.co/SonyCSLParis/music2latent) |
-| **Descript Audio VAE (community)** | CNN | DAC-style Conv1D / DAC-style Conv1D | — | [code](https://github.com/innnky/descript-audio-vae) | 🟢 [weights](https://github.com/innnky/descript-audio-vae) |
-| **Moûsai Diffusion Autoencoder** | CNN | 1D convolutional magnitude encoder / diffusion 1D U-Net decoder | [paper](https://arxiv.org/abs/2301.11757) | [code](https://github.com/archinetai/audio-diffusion-pytorch) | ⚪ — |
-| **Musika autoencoder** | CNN | Two-level Conv1D spectrogram encoder / two-level Conv1D magnitude-phase decoder + iSTFT | [paper](https://arxiv.org/abs/2208.08706) | [code](https://github.com/marcoppasini/musika) | 🟢 [weights](https://huggingface.co/marcop/musika_ae) |
-| **RAVE v2 (MusicNet)** | CNN | Multi-band Conv1D encoder / residual upsampling decoder + waveform/loudness/noise synthesis heads | [paper](https://arxiv.org/abs/2111.05011) | [code](https://github.com/acids-ircam/rave) | 🟢 [weights](https://play.forum.ircam.fr/rave-vst-api/get_model/musicnet) |
+| Model and resources | Architecture |
+| --- | --- |
+| **SAME-L** · [Paper](https://arxiv.org/abs/2605.18613) · [Code](https://github.com/Stability-AI/stable-audio-3) · 🟢 [Weights](https://huggingface.co/stabilityai/SAME-L) | Transformer |
+| **SAME-S** · [Paper](https://arxiv.org/abs/2605.18613) · [Code](https://github.com/Stability-AI/stable-audio-3) · 🟢 [Weights](https://huggingface.co/stabilityai/SAME-S) | Transformer |
+| **ACE-Step 1.5 VAE** · [Paper](https://arxiv.org/abs/2602.00744) · [Code](https://github.com/ace-step/ACE-Step-1.5) · 🟡 [Weights](https://huggingface.co/ACE-Step/Ace-Step1.5) | CNN |
+| **DiffRhythm 2 Music VAE** · [Paper](https://arxiv.org/abs/2510.22950) · [Code](https://github.com/ASLP-lab/DiffRhythm) · ⚪ Weights — | CNN + Transformer |
+| **CoDiCodec continuous branch** · [Paper](https://arxiv.org/abs/2509.09836) · [Code](https://github.com/SonyCSLParis/codicodec) · 🟢 [Weights](https://pypi.org/project/codicodec/) | CNN + Transformer |
+| **epsilonar-VAE** · [Paper](https://arxiv.org/abs/2509.14912) · [Code](https://huggingface.co/earlab/EAR_VAE) · ⚪ Weights — | CNN + Transformer |
+| **ACE-Step DCAE** · [Paper](https://arxiv.org/abs/2506.00045) · [Code](https://github.com/ace-step/ACE-Step) · 🟡 [Weights](https://huggingface.co/ACE-Step/ACE-Step-v1-3.5B) | CNN |
+| **DiffRhythm VAE** · [Paper](https://arxiv.org/abs/2503.01183) · [Code](https://github.com/ASLP-lab/DiffRhythm) · 🟢 [Weights](https://huggingface.co/ASLP-lab/DiffRhythm-vae) | CNN |
+| **Music2Latent** · [Paper](https://arxiv.org/abs/2408.06500) · [Code](https://github.com/SonyCSLParis/music2latent) · 🟢 [Weights](https://huggingface.co/SonyCSLParis/music2latent) | CNN + Transformer |
+| **Descript Audio VAE (community)** · Paper — · [Code](https://github.com/innnky/descript-audio-vae) · 🟢 [Weights](https://github.com/innnky/descript-audio-vae) | CNN |
+| **Moûsai Diffusion Autoencoder** · [Paper](https://arxiv.org/abs/2301.11757) · [Code](https://github.com/archinetai/audio-diffusion-pytorch) · ⚪ Weights — | CNN |
+| **Musika autoencoder** · [Paper](https://arxiv.org/abs/2208.08706) · [Code](https://github.com/marcoppasini/musika) · 🟢 [Weights](https://huggingface.co/marcop/musika_ae) | CNN |
+| **RAVE v2 (MusicNet)** · [Paper](https://arxiv.org/abs/2111.05011) · [Code](https://github.com/acids-ircam/rave) · 🟢 [Weights](https://play.forum.ircam.fr/rave-vst-api/get_model/musicnet) | CNN |
 
 <p align="right"><a href="#top">↑ Back to top</a></p>
 
@@ -156,14 +156,14 @@ Singing reconstruction, singing voice synthesis, and voice conversion. **6 model
 
 **Architecture and resources**
 
-| Model | Architecture | Encoder / Decoder | Paper | Code | Weights |
-| --- | --- | --- | --- | --- | --- |
-| **FM-Singer** | CNN | WaveNet-style posterior/prior encoders + DDSConv flow / DSP-guided GAN waveform generator | [paper](https://arxiv.org/abs/2601.00217) | [code](https://github.com/alsgur9368/FM-Singer) | 🟢 [weights](https://github.com/alsgur9368/FM-Singer) |
-| **CSSinger** | CNN | Causal Conv1D posterior encoder + FFT/ChunkStream prior / causal HiFi-GAN generator | [paper](https://arxiv.org/abs/2412.08918) | — | ⚪ — |
-| **So-VITS-SVC 4.x** | CNN | VITS posterior encoder / HiFi-GAN generator | — | [code](https://github.com/RVC-Boss/sovits) | 🟢 [weights](https://github.com/RVC-Boss/sovits) |
-| **UniSyn** | CNN | Linear-spectrum extractor + WaveNet residual posterior encoder / ConvTranspose1D + MRF wave decoder | [paper](https://arxiv.org/abs/2212.01546) | — | ⚪ — |
-| **VISinger 2** | CNN | 8-layer Conv1D posterior encoder / harmonic-noise DSP synthesizer-conditioned HiFi-GAN | [paper](https://arxiv.org/abs/2211.02903) | — | ⚪ — |
-| **VISinger** | CNN | Linear-spectrum extractor + WaveNet residual encoder / HiFi-GAN generator | [paper](https://arxiv.org/abs/2110.08813) | — | ⚪ — |
+| Model and resources | Architecture |
+| --- | --- |
+| **FM-Singer** · [Paper](https://arxiv.org/abs/2601.00217) · [Code](https://github.com/alsgur9368/FM-Singer) · 🟢 [Weights](https://github.com/alsgur9368/FM-Singer) | CNN |
+| **CSSinger** · [Paper](https://arxiv.org/abs/2412.08918) · Code — · ⚪ Weights — | CNN |
+| **So-VITS-SVC 4.x** · Paper — · [Code](https://github.com/RVC-Boss/sovits) · 🟢 [Weights](https://github.com/RVC-Boss/sovits) | CNN |
+| **UniSyn** · [Paper](https://arxiv.org/abs/2212.01546) · Code — · ⚪ Weights — | CNN |
+| **VISinger 2** · [Paper](https://arxiv.org/abs/2211.02903) · Code — · ⚪ Weights — | CNN |
+| **VISinger** · [Paper](https://arxiv.org/abs/2110.08813) · Code — · ⚪ Weights — | CNN |
 
 <p align="right"><a href="#top">↑ Back to top</a></p>
 
@@ -191,19 +191,19 @@ Speech reconstruction and conditional text-to-speech VAEs. **12 models · 10 wit
 
 **Architecture and resources**
 
-| Model | Architecture | Encoder / Decoder | Paper | Code | Weights |
-| --- | --- | --- | --- | --- | --- |
-| **dots.tts AudioVAE** | CNN | Strided causal residual Conv1D posterior encoder / causal BigVGAN-v2 decoder | [paper](https://arxiv.org/abs/2606.07080) | [code](https://github.com/studio-dots-ai/dots.tts) | 🟡 [weights](https://huggingface.co/rednote-hilab/dots.tts-base) |
-| **VoxCPM2 AudioVAE** | CNN | Strided causal DAC-style Conv1D encoder / deeper sample-rate-conditioned causal Conv1D decoder | [paper](https://arxiv.org/abs/2606.06928) | [code](https://github.com/OpenBMB/VoxCPM) | 🟡 [weights](https://huggingface.co/openbmb/VoxCPM2) |
-| **HoliTok** | CNN | Strided causal residual Conv1D + LSTM bottleneck + normalizing flow / mirrored BigVGAN AMPBlock decoder | [paper](https://arxiv.org/abs/2605.29948) | [code](https://github.com/bovod-sjtu/HoliTok) | 🟡 [weights](https://github.com/bovod-sjtu/HoliTok) |
-| **LongCat Wav-VAE** | CNN | Oobleck dilated residual Conv1D + space-to-channel shortcuts / mirrored ConvTranspose1D + channel-to-space shortcuts | [paper](https://arxiv.org/abs/2603.29339) | [code](https://github.com/meituan-longcat/LongCat-AudioDiT) | 🟡 [weights](https://huggingface.co/meituan-longcat/LongCat-AudioDiT-3.5B) |
-| **MingTok-Audio** | Transformer | Waveform framing + causal Transformer encoder / causal Transformer + Vocos-style complex-STFT iSTFT head | [paper](https://arxiv.org/abs/2511.05516) | [code](https://github.com/inclusionAI/Ming-UniAudio) | 🟢 [weights](https://huggingface.co/inclusionAI/MingTok-Audio) |
-| **SALAD-VAE** | CNN | Centered dilated inverted-bottleneck Conv2D encoder / causal mirrored Conv2D decoder | [paper](https://arxiv.org/abs/2510.07592) | — | ⚪ — |
-| **Semantic-VAE** | CNN | DAC-style Conv1D / BigVGAN decoder | [paper](https://arxiv.org/abs/2509.22167) | [code](https://github.com/ZhikangNiu/Semantic-VAE) | 🟢 [weights](https://huggingface.co/zkniu/Semantic-VAE) |
-| **Semantic-VAE-600k** | CNN | DAC-style Conv1D / BigVGAN decoder | [paper](https://arxiv.org/abs/2509.22167) | [code](https://github.com/ZhikangNiu/Semantic-VAE) | ⚪ — |
-| **Semantic-VAE-A16** | CNN | DAC-style Conv1D / BigVGAN decoder | [paper](https://arxiv.org/abs/2509.22167) | [code](https://github.com/ZhikangNiu/Semantic-VAE) | 🟢 [weights](https://huggingface.co/zkniu/Semantic-VAE/tree/main/acoustic_vae_dim16) |
-| **Semantic-VAE-A64** | CNN | DAC-style Conv1D / BigVGAN decoder | [paper](https://arxiv.org/abs/2509.22167) | [code](https://github.com/ZhikangNiu/Semantic-VAE) | 🟢 [weights](https://huggingface.co/zkniu/Semantic-VAE/tree/main/acoustic_vae_dim64) |
-| **VoxCPM AudioVAE** | CNN | Causal Conv1D / causal ConvTranspose1D | [paper](https://arxiv.org/abs/2509.24650) | [code](https://github.com/OpenBMB/VoxCPM) | 🟢 [weights](https://huggingface.co/openbmb/VoxCPM-0.5B/blob/main/audiovae.pth) |
-| **VibeVoice Acoustic Tokenizer** | CNN | 7-stage depthwise causal Conv1D hierarchy / mirror-symmetric causal Conv1D decoder | [paper](https://arxiv.org/abs/2508.19205) | [code](https://github.com/microsoft/VibeVoice) | 🟢 [weights](https://huggingface.co/microsoft/VibeVoice-AcousticTokenizer) |
+| Model and resources | Architecture |
+| --- | --- |
+| **dots.tts AudioVAE** · [Paper](https://arxiv.org/abs/2606.07080) · [Code](https://github.com/studio-dots-ai/dots.tts) · 🟡 [Weights](https://huggingface.co/rednote-hilab/dots.tts-base) | CNN |
+| **VoxCPM2 AudioVAE** · [Paper](https://arxiv.org/abs/2606.06928) · [Code](https://github.com/OpenBMB/VoxCPM) · 🟡 [Weights](https://huggingface.co/openbmb/VoxCPM2) | CNN |
+| **HoliTok** · [Paper](https://arxiv.org/abs/2605.29948) · [Code](https://github.com/bovod-sjtu/HoliTok) · 🟡 [Weights](https://github.com/bovod-sjtu/HoliTok) | CNN |
+| **LongCat Wav-VAE** · [Paper](https://arxiv.org/abs/2603.29339) · [Code](https://github.com/meituan-longcat/LongCat-AudioDiT) · 🟡 [Weights](https://huggingface.co/meituan-longcat/LongCat-AudioDiT-3.5B) | CNN |
+| **MingTok-Audio** · [Paper](https://arxiv.org/abs/2511.05516) · [Code](https://github.com/inclusionAI/Ming-UniAudio) · 🟢 [Weights](https://huggingface.co/inclusionAI/MingTok-Audio) | Transformer |
+| **SALAD-VAE** · [Paper](https://arxiv.org/abs/2510.07592) · Code — · ⚪ Weights — | CNN |
+| **Semantic-VAE** · [Paper](https://arxiv.org/abs/2509.22167) · [Code](https://github.com/ZhikangNiu/Semantic-VAE) · 🟢 [Weights](https://huggingface.co/zkniu/Semantic-VAE) | CNN |
+| **Semantic-VAE-600k** · [Paper](https://arxiv.org/abs/2509.22167) · [Code](https://github.com/ZhikangNiu/Semantic-VAE) · ⚪ Weights — | CNN |
+| **Semantic-VAE-A16** · [Paper](https://arxiv.org/abs/2509.22167) · [Code](https://github.com/ZhikangNiu/Semantic-VAE) · 🟢 [Weights](https://huggingface.co/zkniu/Semantic-VAE/tree/main/acoustic_vae_dim16) | CNN |
+| **Semantic-VAE-A64** · [Paper](https://arxiv.org/abs/2509.22167) · [Code](https://github.com/ZhikangNiu/Semantic-VAE) · 🟢 [Weights](https://huggingface.co/zkniu/Semantic-VAE/tree/main/acoustic_vae_dim64) | CNN |
+| **VoxCPM AudioVAE** · [Paper](https://arxiv.org/abs/2509.24650) · [Code](https://github.com/OpenBMB/VoxCPM) · 🟢 [Weights](https://huggingface.co/openbmb/VoxCPM-0.5B/blob/main/audiovae.pth) | CNN |
+| **VibeVoice Acoustic Tokenizer** · [Paper](https://arxiv.org/abs/2508.19205) · [Code](https://github.com/microsoft/VibeVoice) · 🟢 [Weights](https://huggingface.co/microsoft/VibeVoice-AcousticTokenizer) | CNN |
 
 <p align="right"><a href="#top">↑ Back to top</a></p>
