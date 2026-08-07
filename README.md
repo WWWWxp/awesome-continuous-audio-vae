@@ -6,8 +6,8 @@
 <p><strong>A curated catalog of continuous audio VAEs and autoencoders for audio, music, singing, and speech.</strong></p>
 
 <p>
-<img src="https://img.shields.io/badge/models-56-4c78a8?style=flat-square" alt="56 models">
-<img src="https://img.shields.io/badge/with_weights-38-2ca02c?style=flat-square" alt="38 with weights">
+<img src="https://img.shields.io/badge/models-55-4c78a8?style=flat-square" alt="55 models">
+<img src="https://img.shields.io/badge/with_weights-37-2ca02c?style=flat-square" alt="37 with weights">
 <img src="https://img.shields.io/badge/updated-2026--08--07-6f42c1?style=flat-square" alt="Updated 2026-08-07">
 </p>
 
@@ -89,13 +89,12 @@ Autoencoders designed for music generation and representation. **13 models · 10
 <a id="singing"></a>
 ## 🎤 Singing
 
-Singing reconstruction, singing voice synthesis, and voice conversion. **6 models · 2 with weights.**
+Singing reconstruction, singing voice synthesis, and voice conversion. **5 models · 1 with weights.**
 
 | Model and resources | Year–Month | Sample rate | Frame rate | Dim | Feature | Architecture |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
 | **FM-Singer** · [Paper](https://arxiv.org/abs/2601.00217) · [Code](https://github.com/alsgur9368/FM-Singer) · 🟢 [Weights](https://github.com/alsgur9368/FM-Singer) | 2026-01 | 44.1 kHz | 86.13 Hz | 192 | score/lyrics + waveform | CNN |
 | **CSSinger** · [Paper](https://arxiv.org/abs/2412.08918) | 2024-12 | 44.1 kHz | 86.13 Hz | 192 | score/lyrics + waveform | CNN |
-| **So-VITS-SVC 4.x** · [Code](https://github.com/RVC-Boss/sovits) · 🟢 [Weights](https://github.com/RVC-Boss/sovits) | 2023-05 | 44.1 kHz | 86.13 Hz | 192 | content/F0 + waveform | CNN |
 | **UniSyn** · [Paper](https://arxiv.org/abs/2212.01546) | 2022-12 | 24 kHz | 80 Hz | N/R | score/lyrics + waveform | CNN |
 | **VISinger 2** · [Paper](https://arxiv.org/abs/2211.02903) | 2022-11 | 44.1 kHz | N/R | 192 | score/lyrics + waveform | CNN |
 | **VISinger** · [Paper](https://arxiv.org/abs/2110.08813) | 2021-10 | 24 kHz | N/R | N/R | score/lyrics + waveform | CNN |
