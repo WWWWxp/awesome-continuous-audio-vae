@@ -6,9 +6,9 @@
 <p><strong>A curated catalog of continuous audio VAEs and autoencoders for audio, music, singing, and speech.</strong></p>
 
 <p>
-<img src="https://img.shields.io/badge/models-56-4c78a8?style=flat-square" alt="56 models">
-<img src="https://img.shields.io/badge/with_weights-38-2ca02c?style=flat-square" alt="38 with weights">
-<img src="https://img.shields.io/badge/updated-2026--08--07-6f42c1?style=flat-square" alt="Updated 2026-08-07">
+<img src="https://img.shields.io/badge/models-57-4c78a8?style=flat-square" alt="57 models">
+<img src="https://img.shields.io/badge/with_weights-39-2ca02c?style=flat-square" alt="39 with weights">
+<img src="https://img.shields.io/badge/updated-2026--08--10-6f42c1?style=flat-square" alt="Updated 2026-08-10">
 </p>
 
 <p><a href="#audio">Audio / Sound</a> · <a href="#music">Music</a> · <a href="#singing">Singing</a> · <a href="#speech">Speech</a></p>
@@ -20,10 +20,11 @@ Papers, official implementations, pretrained weights, latent frame rates, dimens
 <a id="audio"></a>
 ## 🔊 Audio / Sound
 
-General audio, environmental sound, Foley, and multi-domain reconstruction. **26 models · 17 with weights.**
+General audio, environmental sound, Foley, and multi-domain reconstruction. **27 models · 18 with weights.**
 
 | Model and resources | Year–Month | Sample rate | Frame rate | Dim | Feature | Architecture |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
+| **MiniMax H3 AudioVAE**<br>[Code](https://github.com/MiniMax-AI/MiniMax-H3) · [Weights](https://huggingface.co/MiniMaxAI/MiniMax-H3/tree/main/audio_vae) | 2026-07 | 32 kHz | 40 Hz | 32 | stereo waveform | CNN + Transformer |
 | **OmniVAE audio-only**<br>[Paper](https://arxiv.org/abs/2607.23855) · [Code](https://github.com/OpenMOSS/OmniVAE) · [Weights](https://huggingface.co/OpenMOSS-Team/OmniVAE) | 2026-07 | 48 kHz | 50 Hz | 128 | waveform | CNN |
 | **Qwen-Audio-3 Shared VAE**<br>[Paper](https://arxiv.org/abs/2607.27011) | 2026-07 | 48 kHz | 25 Hz | 128 | stereo waveform | CNN |
 | **Qwen-Audio-VAE**<br>[Paper](https://arxiv.org/abs/2607.11738) | 2026-07 | 24 kHz | 12.5 Hz | 128 | waveform | CNN + Transformer |
