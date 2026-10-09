@@ -20,10 +20,11 @@ Papers, official implementations, pretrained weights, latent frame rates, dimens
 <a id="audio"></a>
 ## 🔊 Audio / Sound
 
-General audio, environmental sound, Foley, and multi-domain reconstruction. **27 models · 18 with weights.**
+General audio, environmental sound, Foley, and multi-domain reconstruction. **28 models · 19 with weights.**
 
 | Model and resources | Year–Month | Sample rate | Frame rate | Dim | Feature | Architecture |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
+| **AuK-VAE**<br>[Paper](https://arxiv.org/abs/2609.08936) · [Code](https://github.com/Tencent-Hunyuan/AuK) · [Weights](https://huggingface.co/tencent/AuK/blob/main/vae.safetensors) | 2026-09 | 24 kHz | 50 Hz | 64 | waveform | CNN (BigVGAN) + Normalizing Flow |
 | **MiniMax H3 AudioVAE**<br>[Code](https://github.com/MiniMax-AI/MiniMax-H3) · [Weights](https://huggingface.co/MiniMaxAI/MiniMax-H3/tree/main/audio_vae) | 2026-07 | 32 kHz | 40 Hz | 32 | stereo waveform | CNN + Transformer |
 | **OmniVAE audio-only**<br>[Paper](https://arxiv.org/abs/2607.23855) · [Code](https://github.com/OpenMOSS/OmniVAE) · [Weights](https://huggingface.co/OpenMOSS-Team/OmniVAE) | 2026-07 | 48 kHz | 50 Hz | 128 | waveform | CNN |
 | **Qwen-Audio-3 Shared VAE**<br>[Paper](https://arxiv.org/abs/2607.27011) | 2026-07 | 48 kHz | 25 Hz | 128 | stereo waveform | CNN |
@@ -95,11 +96,10 @@ Singing reconstruction, singing voice synthesis, and voice conversion. **5 model
 <a id="speech"></a>
 ## 🗣️ Speech
 
-Speech reconstruction and conditional text-to-speech VAEs. **14 models · 12 with weights.**
+Speech reconstruction and conditional text-to-speech VAEs. **13 models · 11 with weights.**
 
 | Model and resources | Year–Month | Sample rate | Frame rate | Dim | Feature | Architecture |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
-| **AuK-VAE**<br>[Paper](https://arxiv.org/abs/2609.08936) · [Code](https://github.com/Tencent-Hunyuan/AuK) · [Weights](https://huggingface.co/tencent/AuK/blob/main/vae.safetensors) | 2026-09 | 24 kHz | 50 Hz | 64 | waveform | CNN (BigVGAN) + Normalizing Flow |
 | **RedAE (FireRedAudio)**<br>[Paper](https://arxiv.org/abs/2608.24168) · [Code](https://github.com/FireRedTeam/FireRedAudio) · [Weights](https://huggingface.co/FireRedTeam/FireRedAudio/tree/main/RedAE_decoder) | 2026-08 | 24 kHz | 25 Hz | 64 | waveform | Transformer + iSTFT |
 | **dots.tts AudioVAE**<br>[Paper](https://arxiv.org/abs/2606.07080) · [Code](https://github.com/studio-dots-ai/dots.tts) · [Weights](https://huggingface.co/rednote-hilab/dots.tts-base) | 2026-06 | 48 kHz | 25 Hz | 128 | waveform | CNN |
 | **VoxCPM2 AudioVAE**<br>[Paper](https://arxiv.org/abs/2606.06928) · [Code](https://github.com/OpenBMB/VoxCPM) · [Weights](https://huggingface.co/openbmb/VoxCPM2) | 2026-06 | 16 kHz | 25 Hz | 64 | waveform | CNN |
