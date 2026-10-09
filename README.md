@@ -6,9 +6,9 @@
 <p><strong>A curated catalog of continuous audio VAEs and autoencoders for audio, music, singing, and speech.</strong></p>
 
 <p>
-<img src="https://img.shields.io/badge/models-58-4c78a8?style=flat-square" alt="58 models">
-<img src="https://img.shields.io/badge/with_weights-40-2ca02c?style=flat-square" alt="40 with weights">
-<img src="https://img.shields.io/badge/updated-2026--09--04-6f42c1?style=flat-square" alt="Updated 2026-09-04">
+<img src="https://img.shields.io/badge/models-59-4c78a8?style=flat-square" alt="59 models">
+<img src="https://img.shields.io/badge/with_weights-41-2ca02c?style=flat-square" alt="41 with weights">
+<img src="https://img.shields.io/badge/updated-2026--10--09-6f42c1?style=flat-square" alt="Updated 2026-10-09">
 </p>
 
 <p><a href="#audio">Audio / Sound</a> · <a href="#music">Music</a> · <a href="#singing">Singing</a> · <a href="#speech">Speech</a></p>
@@ -95,10 +95,11 @@ Singing reconstruction, singing voice synthesis, and voice conversion. **5 model
 <a id="speech"></a>
 ## 🗣️ Speech
 
-Speech reconstruction and conditional text-to-speech VAEs. **13 models · 11 with weights.**
+Speech reconstruction and conditional text-to-speech VAEs. **14 models · 12 with weights.**
 
 | Model and resources | Year–Month | Sample rate | Frame rate | Dim | Feature | Architecture |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
+| **AuK-VAE**<br>[Paper](https://arxiv.org/abs/2609.08936) · [Code](https://github.com/Tencent-Hunyuan/AuK) · [Weights](https://huggingface.co/tencent/AuK/blob/main/vae.safetensors) | 2026-09 | 24 kHz | 50 Hz | 64 | waveform | CNN (BigVGAN) + Normalizing Flow |
 | **RedAE (FireRedAudio)**<br>[Paper](https://arxiv.org/abs/2608.24168) · [Code](https://github.com/FireRedTeam/FireRedAudio) · [Weights](https://huggingface.co/FireRedTeam/FireRedAudio/tree/main/RedAE_decoder) | 2026-08 | 24 kHz | 25 Hz | 64 | waveform | Transformer + iSTFT |
 | **dots.tts AudioVAE**<br>[Paper](https://arxiv.org/abs/2606.07080) · [Code](https://github.com/studio-dots-ai/dots.tts) · [Weights](https://huggingface.co/rednote-hilab/dots.tts-base) | 2026-06 | 48 kHz | 25 Hz | 128 | waveform | CNN |
 | **VoxCPM2 AudioVAE**<br>[Paper](https://arxiv.org/abs/2606.06928) · [Code](https://github.com/OpenBMB/VoxCPM) · [Weights](https://huggingface.co/openbmb/VoxCPM2) | 2026-06 | 16 kHz | 25 Hz | 64 | waveform | CNN |
