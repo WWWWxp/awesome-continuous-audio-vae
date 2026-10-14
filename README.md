@@ -6,9 +6,9 @@
 <p><strong>A curated catalog of continuous audio VAEs and autoencoders for audio, music, singing, and speech.</strong></p>
 
 <p>
-<img src="https://img.shields.io/badge/models-59-4c78a8?style=flat-square" alt="59 models">
-<img src="https://img.shields.io/badge/with_weights-41-2ca02c?style=flat-square" alt="41 with weights">
-<img src="https://img.shields.io/badge/updated-2026--10--09-6f42c1?style=flat-square" alt="Updated 2026-10-09">
+<img src="https://img.shields.io/badge/models-60-4c78a8?style=flat-square" alt="60 models">
+<img src="https://img.shields.io/badge/with_weights-42-2ca02c?style=flat-square" alt="42 with weights">
+<img src="https://img.shields.io/badge/updated-2026--10--14-6f42c1?style=flat-square" alt="Updated 2026-10-14">
 </p>
 
 <p><a href="#audio">Audio / Sound</a> · <a href="#music">Music</a> · <a href="#singing">Singing</a> · <a href="#speech">Speech</a></p>
@@ -58,10 +58,11 @@ General audio, environmental sound, Foley, and multi-domain reconstruction. **28
 <a id="music"></a>
 ## 🎵 Music
 
-Autoencoders designed for music generation and representation. **13 models · 10 with weights.**
+Autoencoders designed for music generation and representation. **14 models · 11 with weights.**
 
 | Model and resources | Year–Month | Sample rate | Frame rate | Dim | Feature | Architecture |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
+| **MSVAE**<br>[Code](https://github.com/ASLP-lab/MSVAE) · [Weights](https://huggingface.co/ASLP-lab/MSVAE) | 2026-10 | 24 → 48 kHz | 25 Hz | 64 | stereo waveform | Transformer (MuQ) + CNN (DAC / BigVGAN) |
 | **SAME-L**<br>[Paper](https://arxiv.org/abs/2605.18613) · [Code](https://github.com/Stability-AI/stable-audio-3) · [Weights](https://huggingface.co/stabilityai/SAME-L) | 2026-05 | 44.1 kHz | 10.77 Hz | 256 | waveform | Transformer |
 | **SAME-S**<br>[Paper](https://arxiv.org/abs/2605.18613) · [Code](https://github.com/Stability-AI/stable-audio-3) · [Weights](https://huggingface.co/stabilityai/SAME-S) | 2026-05 | 44.1 kHz | 10.77 Hz | 256 | waveform | Transformer |
 | **ACE-Step 1.5 VAE**<br>[Paper](https://arxiv.org/abs/2602.00744) · [Code](https://github.com/ace-step/ACE-Step-1.5) · [Weights](https://huggingface.co/ACE-Step/Ace-Step1.5) | 2026-02 | 48 kHz | 25 Hz | 64 | waveform | CNN |
